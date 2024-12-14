@@ -16,7 +16,3 @@ uvicorn == 0.18.3
 #unpinned due to package conflicts
 pandas
 matplotlib>=3.5, <3.10
-ydata-profiling
-
-#processing
-markdownify==0.13.1

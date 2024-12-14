@@ -2,8 +2,6 @@
 
 from lib import load_data
 import matplotlib.pyplot as plt
-import markdownify as md
-from ydata_profiling import ProfileReport
 
 data = "NBA_24_stats.csv"
 
@@ -29,17 +27,6 @@ def points_plot(dataset):
     plt.show()
 
 
-def report(dataset):
-    "generates report and converts to pdf"
-    df = load_data(dataset)
-    profile = ProfileReport(df, title="NBA Statistics")
-    export = profile.to_html()
-    markdown = md.markdownify(export)
-    with open("NBA_report.md", "w", encoding="utf-8") as f_write:
-        f_write.write(markdown)
-
-
 if __name__ == "__main__":
     summary(data)
     points_plot(data)
-    report(data)
